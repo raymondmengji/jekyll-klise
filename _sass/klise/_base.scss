@@ -139,16 +139,14 @@ ul {
   list-style: none;
   li {
     display: list-item;
-    text-align: -webkit-match-parent;
-  }
-  li::before {
-    content: "\FE63";
-    display: inline-block;
-    top: -1px;
-    width: 1.2em;
     position: relative;
-    margin-left: -1.3em;
-    font-weight: 700;
+    text-align: -webkit-match-parent;
+    &::before {
+      content: "\FE63";
+      position: absolute;
+      left: -1.3em;
+      font-weight: 700;
+    }
   }
 }
 
@@ -160,12 +158,12 @@ ol {
     counter-increment: li;
     &::before {
       content: counter(li);
-      display: inline-block;
       width: 1em;
-      margin-right: 0.5em;
-      margin-left: -1.6em;
       text-align: right;
       direction: rtl;
+      position: absolute;
+      top: 2px;
+      left: -1.6em;
       font-weight: $bold-weight;
       font-size: $small-font-size;
     }
@@ -179,8 +177,8 @@ ol {
 }
 
 li {
-  padding-bottom: 1px;
-  padding-top: 1px;
+  margin-bottom: 1px;
+  margin-top: 1px;
 
   &:before {
     color: $black;
