@@ -256,19 +256,26 @@ em {
 // Blockquotes
 blockquote {
   color: $gray;
-  font-style: italic;
-  text-align: center;
-  opacity: 0.9;
-  border-top: 1px solid $light;
-  border-bottom: 1px solid $light;
-  padding: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 1em;
 
   > :last-child {
     margin-bottom: 0;
     margin-top: 0;
+  }
+
+  &.paragraph {
+    border-left: 2px solid $light;
+  }
+
+  &:not(.paragraph) {
+    font-style: italic;
+    text-align: center;
+    opacity: 0.9;
+    border-top: 1px solid $light;
+    border-bottom: 1px solid $light;
+    padding: 10px;
   }
 }
 
