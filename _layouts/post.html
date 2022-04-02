@@ -52,7 +52,13 @@ layout: compress
               {{ page.date | date: "%b %d, %Y" }}
             </time>
             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <span itemprop="name">{{ page.author.name }}</span>
+              {% if page.author.url %}
+              <a href="{{ page.author.url }}">
+              {% endif %}
+                <span itemprop="name">{{ page.author.name }}</span>
+              {% if page.author.url %}
+              </a>
+              {% endif %}
             </span>
             <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">
               {{ page.date | date: "%b %d, %Y" }}
